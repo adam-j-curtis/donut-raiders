@@ -10,29 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_10_16_202613) do
-=======
-ActiveRecord::Schema.define(version: 2018_10_16_190224) do
->>>>>>> f52c29be461fdff1f222777b75d2a11f26033e70
-=======
-ActiveRecord::Schema.define(version: 2018_10_16_133301) do
->>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
-<<<<<<< HEAD
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-=======
->>>>>>> f52c29be461fdff1f222777b75d2a11f26033e70
   create_table "donuts", force: :cascade do |t|
     t.bigint "shop_id", null: false
     t.string "name", null: false
@@ -53,8 +41,6 @@ ActiveRecord::Schema.define(version: 2018_10_16_133301) do
     t.index ["donut_id"], name: "index_reviews_on_donut_id"
   end
 
-=======
->>>>>>> master
   create_table "shops", force: :cascade do |t|
     t.string "name", null: false
     t.string "address", null: false
@@ -78,5 +64,4 @@ ActiveRecord::Schema.define(version: 2018_10_16_133301) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-
 end
