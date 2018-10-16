@@ -1,5 +1,4 @@
 require 'rails_helper'
-require_relative "../../app/models/donut.rb"
 
 RSpec.describe Donut, :type => :model do
   it "is not valid without a name" do
