@@ -10,11 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_10_16_190224) do
+=======
+ActiveRecord::Schema.define(version: 2018_10_16_133301) do
+>>>>>>> master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "donuts", force: :cascade do |t|
     t.bigint "shop_id", null: false
     t.string "name", null: false
@@ -35,6 +40,8 @@ ActiveRecord::Schema.define(version: 2018_10_16_190224) do
     t.index ["donut_id"], name: "index_reviews_on_donut_id"
   end
 
+=======
+>>>>>>> master
   create_table "shops", force: :cascade do |t|
     t.string "name", null: false
     t.string "address", null: false
