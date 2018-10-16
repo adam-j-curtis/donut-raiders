@@ -7,3 +7,5 @@ class Donut < ApplicationRecord
   validates :category, presence: true
 
 end
+
+# To add association to :shop and :reviews.
