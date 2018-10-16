@@ -11,7 +11,11 @@
 # It's strongly recommended that you check this file into your version control system.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_10_16_202613) do
+=======
+ActiveRecord::Schema.define(version: 2018_10_16_190224) do
+>>>>>>> f52c29be461fdff1f222777b75d2a11f26033e70
 =======
 ActiveRecord::Schema.define(version: 2018_10_16_133301) do
 >>>>>>> master
@@ -20,12 +24,15 @@ ActiveRecord::Schema.define(version: 2018_10_16_133301) do
   enable_extension "plpgsql"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+=======
+>>>>>>> f52c29be461fdff1f222777b75d2a11f26033e70
   create_table "donuts", force: :cascade do |t|
     t.bigint "shop_id", null: false
     t.string "name", null: false
