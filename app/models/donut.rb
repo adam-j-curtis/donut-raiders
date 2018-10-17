@@ -4,5 +4,3 @@ class Donut < ApplicationRecord
   belongs_to :category
   belongs_to :shop
 end
-
-# To add association to :shop and :reviews.
