@@ -5,7 +5,7 @@ RSpec.describe Review, :type => :model do
   it "is not valid without a rating" do
     review = Review.new(rating: nil, body: "It's a party for the palette", price_range: "$$", photo_url: "pic.u")
     expect(review).to_not be_valid
-    expect(review.errors.messages).to eq(:rating=>["can't be blank"])
+    expect(review.errors.messages).to eq(:rating=>["can't be blank", "is not a number"])
   end
 
   it "is not valid without a body" do
@@ -24,5 +24,13 @@ RSpec.describe Review, :type => :model do
     review = Review.new(rating: 5, body: "It's a party for the palette", price_range: "$$", photo_url: nil)
     expect(review).to be_valid
     expect(review.errors.messages).to eq({})
+  end
+
+  it "has a rating that is a number" do
+    review = Review.new(rating: 4, body: "It's a party for the palette", price_range: "$$", photo_url: nil)
+    expect(review.rating).to be_an(Integer)
+    expect(review.rating).to be <= 5
+    expect(review.rating).to be >= 0
+
   end
 end
