@@ -1,8 +1,6 @@
 require 'rails_helper'
-
 feature 'user visits donut index page' do
   scenario 'user sees a list of donuts' do
-
     dunkin = Shop.create(name: "Dunkin' Donuts", address: "56 Westview Lane", city: "Pittsburgh", state: "PA", url:"www.google.com", phone:"123-456-7890")
 
     honeydew = Shop.create(name: "Honeydew Donuts", address: "1600 Pennsylvia Ave NW", city: "Washington, DC", state: "DC", url:"www.honeydewrules.org", phone:"111-111-1112")
@@ -26,6 +24,5 @@ feature 'user visits donut index page' do
     expect(page).to have_content donut1.name
     expect(page).to have_content donut2.category.name
     expect(page).to have_content donut3.shop.name
-
   end
 end
