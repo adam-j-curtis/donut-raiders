@@ -4,7 +4,7 @@
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div>
-      <%= f.label :email, 'Email', :class => 'email-field'  %><br />
+      <%= f.label :email, 'Email', :class => 'password-field'  %><br />
       <div class="input-form">
         <%= f.email_field :email, autofocus: true, autocomplete: "email"%>
       </div>
@@ -24,7 +24,7 @@
       <% end -%>
 
       <div class="actions">
-        <%= f.submit "Submit", :class => 'submit_button' %>
+        <%= f.submit "Log in", :class => 'submit_button' %>
       </div>
     <% end %>
     <div class="devise-shared-links">

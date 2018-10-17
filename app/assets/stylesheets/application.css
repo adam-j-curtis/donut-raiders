@@ -58,13 +58,20 @@ body {
   color: #946038;
 }
 
+.submit_button_two {
+  font-size: 1.5em;
+  font-family: "Meatloaf", sans-serif;
+  border-radius: 40px;
+  color: #946038;
+  margin-left: 2%;
+}
+
 .password-field {
     color: #EF787E;
     font-size: 5em;
     font-weight: 700;
     margin-left: 2%;
     font-family: "Meatloaf", sans-serif;
-    /* background: rgba(251,233,223,0.7); */
     margin-left: 2%;
     border-radius: 40px;
     display: inline;
@@ -114,6 +121,16 @@ em {
   font-weight: 800;
   padding: 10px;
   color: white;
+}
+
+.devise-shared-links-two {
+  display: inline-block;
+  border-radius: 40px;
+  font-weight: 800;
+  padding: 10px;
+  color: white;
+  font-size: 3em;
+  margin-left: 2%;
 }
 
 .texts-and-fields {
