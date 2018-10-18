@@ -15,3 +15,124 @@
  *= require foundation_and_overrides
 
  */
+@font-face {
+  font-family: "Meatloaf";
+  src: url('/assets/Meatloaf');
+}
+
+.top-bar {
+  opacity: .8;
+}
+
+body {
+  background: url(http://makeandtell.com/wp-content/uploads/2016/06/deckyourdesktop_june2016_widescreen.jpg) no-repeat center center fixed, rgba(251,233,223,0.7);
+  background-position: center;
+  background-size: cover;
+}
+
+.log-in {
+  color: #956038;
+  font-weight: 700;
+  margin-left: 2%;
+  font-size: 10em;
+  font-family: "Meatloaf", sans-serif;
+  display: inline;
+  border-radius: 40px;
+}
+
+.email-field {
+    color: #02ACA1;
+    font-size: 5em;
+    font-weight: 700;
+    margin-left: 2%;
+    font-family: "Meatloaf", sans-serif;
+    border-radius: 40px;
+    display: inline;
+    padding: 1px;
+}
+
+.submit_button {
+  font-size: 1.5em;
+  font-family: "Meatloaf", sans-serif;
+  border-radius: 40px;
+  color: #946038;
+}
+
+.submit_button_two {
+  font-size: 1.5em;
+  font-family: "Meatloaf", sans-serif;
+  border-radius: 40px;
+  color: #946038;
+  margin-left: 2%;
+}
+
+.password-field {
+    color: #EF787E;
+    font-size: 5em;
+    font-weight: 700;
+    margin-left: 2%;
+    font-family: "Meatloaf", sans-serif;
+    margin-left: 2%;
+    border-radius: 40px;
+    display: inline;
+    padding: 0%;
+}
+
+.new-password-field {
+  color: #EF787E;
+  font-size: 5em;
+  font-weight: 700;
+  margin-left: 2%;
+  font-family: "Meatloaf", sans-serif;
+  margin-left: 2%;
+  border-radius: 40px;
+  display: inline;
+  padding: 0.5%;
+}
+
+.input-form {
+  padding: 0;
+  margin-left: 2%;
+  margin-bottom: 20px;
+  width: 80%;
+}
+
+.check-box {
+  padding: 10px;
+  color: black;
+  font-family: "Meatloaf", sans-serif;
+  border-radius: 40px;
+  font-size: 2em;
+  font-weight: 800;
+}
+
+em {
+  margin-left: 2%;
+}
+
+.sign-up-acc {
+  margin-left: 2%;
+  font-size: 2em;
+}
+
+.devise-shared-links {
+  display: inline-block;
+  border-radius: 40px;
+  font-weight: 800;
+  padding: 10px;
+  color: white;
+}
+
+.devise-shared-links-two {
+  display: inline-block;
+  border-radius: 40px;
+  font-weight: 800;
+  padding: 10px;
+  color: white;
+  font-size: 3em;
+  margin-left: 2%;
+}
+
+.texts-and-fields {
+  background: rgba(251,233,223,0.7);
+}
