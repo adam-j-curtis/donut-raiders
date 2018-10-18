@@ -1,5 +1,5 @@
 class DonutsController < ApplicationController
   def index
-    @donuts = Donuts.all
+    @donuts = Donut.all
   end
 end
