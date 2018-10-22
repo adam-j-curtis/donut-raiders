@@ -1,13 +1,12 @@
-<div class="">
-  <h1>Donut Index</h1>
 
-  <% @donuts.each do |donut| %>
-  <ul>
-    <h3><%= donut.name %></h3>
-    <h4><%= donut.shop.name %></h4>
-    <h6><%= donut.category.name %></h6>
-  </ul>
+<%= javascript_include_tag 'application' %>
 
-  <% end %>
+<%- if Rails.env.development? || Rails.env.test? -%>
+  <%= javascript_tag do %>
+    window.railsEnv = '<%= Rails.env %>'
+  <%- end -%>
+<%- end -%>
+<%= javascript_pack_tag 'application' %>
 
+<div id="app">
 </div>

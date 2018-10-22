@@ -1,7 +1,13 @@
 import React from 'react'
+import Main from './Main'
+
 
 export const App = (props) => {
-  return (<h1>Make It So React</h1>)
+  return (
+    <div>
+      <Main />
+    </div>
+  )
 }
 
 export default App
