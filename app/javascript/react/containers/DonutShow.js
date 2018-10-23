@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import ReviewTile from '../components/ReviewTile'
 
 
@@ -14,9 +13,9 @@ class DonutShow extends Component {
   }
 
   componentDidMount(){
-    let donutId = this.props.params.id
+    // let donutId = this.props.params.id
 
-    fetch(`/api/v1/donuts/${donutId}`)
+    fetch(`/api/v1/shops/${this.props.params.id[0]}/donuts/${this.props.params.id[1]}`)
     .then(response => {
       if (response.ok) {
         return response;
@@ -34,6 +33,7 @@ class DonutShow extends Component {
   }
 
   render(){
+    console.log(this.props)
     let donutdata = this.state
     let reviews = donutdata.reviews.map(review => {
       return(
