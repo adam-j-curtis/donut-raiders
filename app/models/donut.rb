@@ -4,5 +4,8 @@ class Donut < ApplicationRecord
   belongs_to :category
   belongs_to :shop
   has_many :reviews
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 end

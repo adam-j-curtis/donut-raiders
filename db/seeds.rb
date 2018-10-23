@@ -17,5 +17,10 @@ Donut.create!(name: "Sugar-Raised Donut", category_id: 1, shop_id: 3)
 Donut.create!(name: "Jelly Donut", category_id: 2, shop_id: 2)
 Donut.create!(name: "French Crueller", category_id: 3, shop_id: 1)
 
+<<<<<<< HEAD
 Review.create!(rating: 4, body: "this is the best donut i have ever tasted in my 7 years on this earth", price_range: "1", photo_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Glazed-Donut.jpg/1200px-Glazed-Donut.jpg")
 Review.create!(rating: 2, body: "this is a very mediocre and not exciting donut", price_range: "2", photo_url: "https://www.theflavorbender.com/wp-content/uploads/2014/09/Simpsons-Doughnuts-4238-Copy-1.jpg")
+=======
+Review.create!(rating: 4, body: "this is the best donut i have ever tasted in my 7 years on this earth", price_range: "1", photo_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Glazed-Donut.jpg/1200px-Glazed-Donut.jpg", donut_id: 1, shop_id: 2 )
+Review.create!(rating: 2, body: "this is a very mediocre and not exciting donut", price_range: "2", photo_url: "https://www.theflavorbender.com/wp-content/uploads/2014/09/Simpsons-Doughnuts-4238-Copy-1.jpg", donut_id: 2, shop_id: 1 )
+>>>>>>> master

@@ -43,7 +43,6 @@ module.exports = function(config) {
           // use babel-loader to transpile the test and src folders
           {
             test: /\.jsx?$/,
-            exclude: /node_modules/,
             loader: 'babel-loader'
           },
           {
