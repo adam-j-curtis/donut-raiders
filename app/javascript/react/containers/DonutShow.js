@@ -28,9 +28,7 @@ class DonutShow extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      console.log(body)
       this.setState({ donut: body.donut, shop: body.donut.shop, reviews: body.donut.reviews})
-      console.log(this.state)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -50,6 +48,7 @@ class DonutShow extends Component {
           />
       )
     })
+
 
     return (
       <div>
