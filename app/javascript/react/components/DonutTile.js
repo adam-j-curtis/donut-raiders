@@ -4,8 +4,7 @@ import { Link } from 'react-router'
 const DonutTile = (props) => {
   return(
     <div>
-      <h1><Link to={`/donut/${props.id}`}>{props.name}</Link></h1>
-      <h4>{props.shopName}</h4>
+      <h1><Link to={`/shop/${props.shopId}/donuts/${props.id}`} key={props.id}>{props.name}</Link></h1>
     </div>
   )
 }
