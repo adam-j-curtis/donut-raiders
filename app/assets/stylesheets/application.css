@@ -15,19 +15,31 @@
  *= require foundation_and_overrides
 
  */
-@font-face {
-  font-family: "Meatloaf";
-  src: url('/assets/Meatloaf');
-}
+
 
 .top-bar {
-  opacity: .8;
+  background-color: #bd895d;
+  padding: 3rem 3rem 3rem 3rem;
+}
+
+.top-bar li a {
+  vertical-align: text-top;
+  font-family: 'Roboto', sans-serif;
+  color: #BD885F;
+  border: 2rem;
+  padding: 0rem 0rem 3rem 0rem;
+}
+
+.title-area li a {
+  padding-bottom: 5rem;
+  display: inline-flex;
 }
 
 body {
   background: url(http://makeandtell.com/wp-content/uploads/2016/06/deckyourdesktop_june2016_widescreen.jpg) no-repeat center center fixed, rgba(251,233,223,0.7);
   background-position: center;
   background-size: cover;
+  background-blend-mode: lighten;
 }
 
 .log-in {
@@ -35,7 +47,7 @@ body {
   font-weight: 700;
   margin-left: 2%;
   font-size: 10em;
-  font-family: "Meatloaf", sans-serif;
+  font-family: 'Gloria Hallelujah', cursive;
   display: inline;
   border-radius: 40px;
 }
@@ -45,7 +57,7 @@ body {
     font-size: 5em;
     font-weight: 700;
     margin-left: 2%;
-    font-family: "Meatloaf", sans-serif;
+    font-family: 'Gloria Hallelujah', cursive;
     border-radius: 40px;
     display: inline;
     padding: 1px;
@@ -53,14 +65,14 @@ body {
 
 .submit_button {
   font-size: 1.5em;
-  font-family: "Meatloaf", sans-serif;
+  font-family: 'Gloria Hallelujah', cursive;
   border-radius: 40px;
   color: #946038;
 }
 
 .submit_button_two {
   font-size: 1.5em;
-  font-family: "Meatloaf", sans-serif;
+  font-family: 'Gloria Hallelujah', cursive;
   border-radius: 40px;
   color: #946038;
   margin-left: 2%;
@@ -71,7 +83,7 @@ body {
     font-size: 5em;
     font-weight: 700;
     margin-left: 2%;
-    font-family: "Meatloaf", sans-serif;
+    font-family: 'Gloria Hallelujah', cursive;
     margin-left: 2%;
     border-radius: 40px;
     display: inline;
@@ -83,7 +95,7 @@ body {
   font-size: 5em;
   font-weight: 700;
   margin-left: 2%;
-  font-family: "Meatloaf", sans-serif;
+  font-family: 'Gloria Hallelujah', cursive;
   margin-left: 2%;
   border-radius: 40px;
   display: inline;
@@ -100,7 +112,7 @@ body {
 .check-box {
   padding: 10px;
   color: black;
-  font-family: "Meatloaf", sans-serif;
+  font-family: 'Gloria Hallelujah', cursive;
   border-radius: 40px;
   font-size: 2em;
   font-weight: 800;
@@ -134,5 +146,43 @@ em {
 }
 
 .texts-and-fields {
-  background: rgba(251,233,223,0.7);
+  /* background: rgba(251,233,223,0.7); */
+}
+
+.shop-tile {
+  border: .5rem;
+  border-style: solid;
+  padding: 4rem;
+  margin: 2rem;
+  text-align: center;
+  display: inline-flex;
+  background-color: #B6DCD3;
+}
+
+.shop-tile h4{
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+.shop-tile a{
+  font-family: 'Gloria Hallelujah', cursive;
+  font-style: oblique;
+}
+
+.footer{
+  vertical-align: bottom;
+  background-color: #bd895d;
+  position: sticky;
+  margin: 80rem 0rem 0rem 0rem;
+  padding: 0rem 0rem 0rem 0rem;
+  border: 0rem 0rem 0rem 0rem;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.footer li {
+  text-align: center;
+  padding: 1rem 2rem 2rem 2rem;
+  vertical-align: bottom;
+  display: inline-block;
+  text-align: center;
 }
