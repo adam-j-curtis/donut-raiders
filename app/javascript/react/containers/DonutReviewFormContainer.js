@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import DonutReviewTextBodyField from '../components/DonutReviewTextBodyFieldTile';
 import DonutReviewRatingField from '../components/DonutReviewRatingFieldTile';
 import DonutReviewPriceField from '../components/DonutReviewPriceFieldTile';
+import DonutShow from './DonutShow';
 
 class DonutReviewFormContainer extends Component {
   constructor(props) {
@@ -10,30 +11,47 @@ class DonutReviewFormContainer extends Component {
       donutReviewTextBody: '',
       donutReviewRating: '',
       donutReviewPrice: '',
+      allTheReviews: []
     }
     this.handleNewDonutReviewTextBodyField = this.handleNewDonutReviewTextBodyField.bind(this)
     this.handleNewDonutReviewRatingField = this.handleNewDonutReviewRatingField.bind(this)
     this.handleNewDonutReviewPriceField = this.handleNewDonutReviewPriceField.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleClear = this.handleClear.bind(this)
+    this.addNewDonutReview = this.addNewDonutReview.bind(this)
   }
 
-  handleNewDonutReviewTextBodyField(event) {
-    this.setState({ donutReviewTextBody: event.target.value})
-  }
+    handleNewDonutReviewTextBodyField(event) {
+      this.setState({ donutReviewTextBody: event.target.value})
+    }
 
-  handleNewDonutReviewRatingField(event) {
-    this.setState({ donutReviewRating: event.target.value})
-  }
+    handleNewDonutReviewRatingField(event) {
+      this.setState({ donutReviewRating: event.target.value})
+    }
 
-  handleNewDonutReviewPriceField(event) {
-    this.setState({ donutReviewPrice: event.target.value})
+    handleNewDonutReviewPriceField(event) {
+      this.setState({ donutReviewPrice: event.target.value})
+    }
+
+  componentDidMount() {
+    fetch(`/api/v1/shops/${this.props.shopId}/donuts/${this.props.donutId}`)
+      .then(response => {
+        let parsed = response.json()
+        return parsed
+      })
+      .then(parsedDonutShowPage => {
+        this.setState({ allTheReviews: parsedDonutShowPage.donut.reviews })
+      })
   }
 
   addNewDonutReview(formPayload) {
-    fetch('/api/v1/reviews', {
+    fetch(`/api/v1/shops/${this.props.shopId}/donuts/${this.props.donutId}/reviews`, {
       method: 'POST',
-      body: JSON.stringify(fromPayload)
+      body: JSON.stringify(formPayload),
+      headers: {
+        'Accept':  'application/json',
+        'Content-Type': 'application/json'},
+      credentials: 'same-origin'
     })
     .then(response => {
       if (response.ok) {
@@ -46,20 +64,27 @@ class DonutReviewFormContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      let newReviews = this.state.reviews.concat(body)
-      this.setState({ reviews: newReviews })
-    })
+          let newAllTheReviews = this.state.allTheReviews.concat(body.donut.reviews)
+          console.log('First debugger - after newAllTheReviews')
+          debugger;
+          this.setState({ allTheReviews: newAllTheReviews})
+          debugger;
+          console.log('why is state not resetting?')
+
+        })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   handleSubmit(event) {
+
     event.preventDefault();
     let formPayload = {
       donutReviewTextBody: this.state.donutReviewTextBody,
       donutReviewRating: this.state.donutReviewRating,
       donutReviewPrice: this.state.donutReviewPrice,
     }
-    addNewDonutReview(formPayload)
+    this.addNewDonutReview(formPayload)
+
   }
 
   handleClear(event) {
@@ -72,8 +97,13 @@ class DonutReviewFormContainer extends Component {
   }
 
   render() {
+    console.log(`consoling log from render`)
+
+
+    let handleNewDonutReview = (formPayload) => this.addNewDonutReview(formPayload)
+
     return(
-      <form>
+      <form onSubmit={this.handleSubmit} >
         <DonutReviewTextBodyField
           content={this.state.donutReviewTextBody}
           label="Donut Review Text Body"
@@ -94,7 +124,7 @@ class DonutReviewFormContainer extends Component {
         />
         <div className="button-group">
           <button className="button" onClick={this.handleClear} >Clear</button>
-          <input className="button" onClick={this.handleSubmit} type="submit" value="Submit" />
+          <input className="button" type="submit" value="Submit" />
         </div>
       </form>
     )

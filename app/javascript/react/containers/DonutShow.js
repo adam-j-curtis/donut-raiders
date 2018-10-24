@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReviewTile from '../components/ReviewTile'
-
+import DonutReviewFormContainer from './DonutReviewFormContainer'
 
 class DonutShow extends Component {
   constructor(props){
@@ -59,6 +59,12 @@ class DonutShow extends Component {
         <h4>{donutdata.shop.city}</h4>
         <h4>{donutdata.shop.state}</h4>
         <h4>{donutdata.shop.url}</h4>
+        <hr/>
+        {this.props.children}
+        <DonutReviewFormContainer
+          shopId = {this.props.params.id[0]}
+          donutId = {this.props.params.id[1]}
+        />
         <hr/>
         <h2>Reviews:</h2>
         <hr/>

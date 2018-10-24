@@ -8,27 +8,37 @@ class Api::V1::ReviewsController < ApplicationController
   end
 
   def create
+
     @shop = Shop.find(params[:shop_id])
     @donut = Donut.find(params[:donut_id])
-    @review = Review.new(review_params)
+#    @review = Review.new(review_params)
 
-    @donut.shop = @shop
+
+    #@donut.shop = @shop
+    @review = Review.new
     @review.donut = @donut
+    @review.shop = @shop
+
+    @review.rating = params[:donutReviewRating]
+    @review.body = params[:donutReviewTextBody]
+    @review.price_range = params[:donutReviewPrice]
 
     if @review.save
-      render json: Review.last, adapter: :json
+      puts "winner"
+      render json: Donut.find(params[:donut_id])
     else
-      render
+      render json: Donut.find(params[:donut_id])
     end
+
   end
 
-  private
-    def reviewe_params
-      params.require(:review).permit(
-        :rating,
-        :body,
-        :price_range
-      )
-    end
+  # private
+  #   def review_params
+  #     params.require(:review).permit(
+  #       :donutReviewTextBody,
+  #       :donutReviewRating,
+  #       :donutReviewPrice
+  #     )
+  #   end
 
 end
