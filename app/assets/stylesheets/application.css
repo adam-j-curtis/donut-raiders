@@ -15,15 +15,7 @@
  *= require foundation_and_overrides
 
  */
-<<<<<<< HEAD
-@import url(
-'https://fonts.googleapis.com/css?family=Bungee+Shade');
-=======
-/* @font-face {
-  font-family: "Meatloaf";
-  src: url('/assets/Meatloaf');
-} */
->>>>>>> 15c8e0a9c8817019fd7293f5182df2f310087e67
+
 
 .top-bar {
   background-color: #bd895d;
@@ -41,7 +33,6 @@
 .title-area li a {
   padding-bottom: 5rem;
   display: inline-flex;
-  /* margin: 3rem; */
 }
 
 body {
@@ -49,7 +40,6 @@ body {
   background-position: center;
   background-size: cover;
   background-blend-mode: lighten;
- /* -webkit-filter: blur(8px); */
 }
 
 .log-in {
@@ -75,12 +65,7 @@ body {
 
 .submit_button {
   font-size: 1.5em;
-<<<<<<< HEAD
-  font-family: 'Bungee Shade', cursive;
-=======
   font-family: 'Gloria Hallelujah', cursive;
-  /* font-family: "Meatloaf", sans-serif; */
->>>>>>> 15c8e0a9c8817019fd7293f5182df2f310087e67
   border-radius: 40px;
   color: #946038;
 }

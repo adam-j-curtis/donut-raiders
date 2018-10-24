@@ -5,7 +5,7 @@ import fetchMock from 'fetch-mock'
 describe('ShopShow', () => {
   let data,
       wrapper;
-console.log(wrapper.debug())
+      console.log(wrapper.debug())
   beforeEach(() => {
   data = {
   shop: {
@@ -56,15 +56,17 @@ console.log(wrapper.debug())
     ]
   }
 }
-  fetchMock.get(`/api/v1/shop/1`, {
+  fetchMock.get(`/api/v1/shops/13`, {
     status: 200,
     body: data
   })
     wrapper = mount(
       <ShopShow
-        params = {{ id: [13, 9, 6]}}
+        // params = {{ id: [13, ]}}
       />
     );
+    console.log(wrapper.debug())
+
   });
 
   afterEach(fetchMock.restore)
