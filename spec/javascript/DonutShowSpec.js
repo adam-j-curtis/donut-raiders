@@ -4,7 +4,6 @@ import ReviewTile from '../../app/javascript/react/components/ReviewTile'
 import fetchMock from 'fetch-mock'
 
 
-
 describe("DonutShow", () => {
   let wrapper;
   let data;
