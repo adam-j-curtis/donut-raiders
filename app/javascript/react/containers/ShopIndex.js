@@ -35,6 +35,7 @@ class ShopIndex extends Component {
 
     let mappedShops = this.state.shops.map(shop => {
       return(
+        <div key={shop.id} className='shop-tile'>
         <ShopTile
           key = {shop.id}
           id = {shop.id}
@@ -45,10 +46,11 @@ class ShopIndex extends Component {
           phone = {shop.phone}
           url = {shop.url}
         />
+        </div>
       )
     })
     return(
-      <div>
+      <div className="text-center medium-12 columns">
         {mappedShops}
         {this.props.children}
       </div>
