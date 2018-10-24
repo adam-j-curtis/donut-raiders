@@ -4,6 +4,5 @@ class DonutsController < ApplicationController
   end
 
   def show
-    @donut = Donut.find(params[:id])
   end
 end

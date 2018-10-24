@@ -2,31 +2,30 @@
 <html>
 <head>
   <title>DonutRaiders</title>
-    <link href=“https://fonts.googleapis.com/css?family=Gloria+Hallelujah” rel=“stylesheet”>
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Roboto:500" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
 
     <%= javascript_include_tag "vendor/modernizr" %>
 
   <%= csrf_meta_tags %>
-
 </head>
 <body>
 
   <nav class="top-bar">
     <ul class="title-area">
       <li class="name">
-        <h1><a href="/donuts">DonutRaiders</a></h1>
+        <h1><a href="/shops">DonutRaiders</a></h1>
       </li>
     </ul>
 
-    <section class="top-bar-section">
+    <section class="">
       <ul class="right">
         <%- if current_user -%>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
+          <li class="secondary button"><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <li class="secondary button"><%= link_to 'Sign In', new_user_session_path %></li>
         <%- end -%>
       </ul>
     </section>
@@ -50,5 +49,6 @@
   <%= javascript_pack_tag 'application' %>
 
   <%= yield :extra_footer %>
+  <%= render "layouts/footer" %>
 </body>
 </html>
