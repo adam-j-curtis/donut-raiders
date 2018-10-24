@@ -227,4 +227,16 @@ Donut Review Text Body
 Donut Review Raiting (Radio Buttons?)
 Donut Review Price (Radio Buttons?)
 Donut ReviewPhoto
+
+componentDidMount() {
+  fetch(`/api/v1/shops/${this.props.shopId}/donuts/${this.props.donutId}`)
+    .then(response => {
+      let parsed = response.json()
+      return parsed
+    })
+    .then(parsedDonutShowPage => {
+      this.setState({ allTheReviews: parsedDonutShowPage.donut.reviews })
+    })
+}
+
 */

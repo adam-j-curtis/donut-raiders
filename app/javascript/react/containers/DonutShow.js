@@ -10,6 +10,7 @@ class DonutShow extends Component {
       shop: [],
       reviews: []
     }
+    this.addNewDonutReview = this.addNewDonutReview.bind(this);
   }
 
   componentDidMount(){
@@ -30,7 +31,36 @@ class DonutShow extends Component {
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
+
+  addNewDonutReview(formPayload) {
+    fetch(`/api/v1/shops/${this.props.params.id[0]}/donuts/${this.props.params.id[1]}/reviews`, {
+      method: 'POST',
+      body: JSON.stringify(formPayload),
+      headers: {
+        'Accept':  'application/json',
+        'Content-Type': 'application/json'},
+      credentials: 'same-origin'
+    })
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+          this.setState({ reviews: body.donut.reviews})
+        })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
   render(){
+
+    let handleNewDonutReview = (formPayload) => this.addNewDonutReview(formPayload)
+
     let donutdata = this.state
     let reviews = donutdata.reviews.map(review => {
       return(
@@ -57,8 +87,7 @@ class DonutShow extends Component {
         <hr/>
         {this.props.children}
         <DonutReviewFormContainer
-          shopId = {this.props.params.id[0]}
-          donutId = {this.props.params.id[1]}
+          addNewDonutReview={handleNewDonutReview}
         />
         <hr/>
         <h2>Reviews:</h2>

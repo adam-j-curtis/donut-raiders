@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import DonutReviewTextBodyField from '../components/DonutReviewTextBodyFieldTile';
 import DonutReviewRatingField from '../components/DonutReviewRatingFieldTile';
 import DonutReviewPriceField from '../components/DonutReviewPriceFieldTile';
-import DonutShow from './DonutShow';
 
 class DonutReviewFormContainer extends Component {
   constructor(props) {
@@ -10,15 +9,13 @@ class DonutReviewFormContainer extends Component {
     this.state = {
       donutReviewTextBody: '',
       donutReviewRating: '',
-      donutReviewPrice: '',
-      allTheReviews: []
+      donutReviewPrice: ''
     }
     this.handleNewDonutReviewTextBodyField = this.handleNewDonutReviewTextBodyField.bind(this)
     this.handleNewDonutReviewRatingField = this.handleNewDonutReviewRatingField.bind(this)
     this.handleNewDonutReviewPriceField = this.handleNewDonutReviewPriceField.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleClear = this.handleClear.bind(this)
-    this.addNewDonutReview = this.addNewDonutReview.bind(this)
   }
 
     handleNewDonutReviewTextBodyField(event) {
@@ -33,47 +30,7 @@ class DonutReviewFormContainer extends Component {
       this.setState({ donutReviewPrice: event.target.value})
     }
 
-  componentDidMount() {
-    fetch(`/api/v1/shops/${this.props.shopId}/donuts/${this.props.donutId}`)
-      .then(response => {
-        let parsed = response.json()
-        return parsed
-      })
-      .then(parsedDonutShowPage => {
-        this.setState({ allTheReviews: parsedDonutShowPage.donut.reviews })
-      })
-  }
 
-  addNewDonutReview(formPayload) {
-    fetch(`/api/v1/shops/${this.props.shopId}/donuts/${this.props.donutId}/reviews`, {
-      method: 'POST',
-      body: JSON.stringify(formPayload),
-      headers: {
-        'Accept':  'application/json',
-        'Content-Type': 'application/json'},
-      credentials: 'same-origin'
-    })
-    .then(response => {
-      if (response.ok) {
-        return response;
-      } else {
-        let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
-        throw(error);
-      }
-    })
-    .then(response => response.json())
-    .then(body => {
-          let newAllTheReviews = this.state.allTheReviews.concat(body.donut.reviews)
-          console.log('First debugger - after newAllTheReviews')
-          debugger;
-          this.setState({ allTheReviews: newAllTheReviews})
-          debugger;
-          console.log('why is state not resetting?')
-
-        })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
-  }
 
   handleSubmit(event) {
 
@@ -83,7 +40,8 @@ class DonutReviewFormContainer extends Component {
       donutReviewRating: this.state.donutReviewRating,
       donutReviewPrice: this.state.donutReviewPrice,
     }
-    this.addNewDonutReview(formPayload)
+    this.props.addNewDonutReview(formPayload)
+    this.handleClear(event)
 
   }
 
@@ -98,9 +56,6 @@ class DonutReviewFormContainer extends Component {
 
   render() {
     console.log(`consoling log from render`)
-
-
-    let handleNewDonutReview = (formPayload) => this.addNewDonutReview(formPayload)
 
     return(
       <form onSubmit={this.handleSubmit} >
