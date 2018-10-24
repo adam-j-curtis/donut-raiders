@@ -13,8 +13,6 @@ class DonutShow extends Component {
   }
 
   componentDidMount(){
-    // let donutId = this.props.params.id
-
     fetch(`/api/v1/shops/${this.props.params.id[0]}/donuts/${this.props.params.id[1]}`)
     .then(response => {
       if (response.ok) {
@@ -27,9 +25,7 @@ class DonutShow extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      console.log(body)
       this.setState({ donut: body.donut, shop: body.donut.shop, reviews: body.donut.reviews})
-      console.log(this.state)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -67,7 +63,5 @@ class DonutShow extends Component {
     )
   }
 }
-
-
 
 export default DonutShow

@@ -33,7 +33,7 @@ class ShopShow extends Component {
   }
 
   render(){
-    console.log(this.state)
+    console.log(this.state.params)
 
     let donuts = this.state.donuts.map(donut => {
       return(
@@ -42,14 +42,15 @@ class ShopShow extends Component {
           key = {donut.id}
           name = {donut.name}
           shopId = {this.state.shop.id}
-
           />
       )
     })
 
     return (
       <div>
-        <h1>Store Name: {this.state.shop.name}</h1>
+        <div className="input-form">
+        <h1>Store Name:{this.state.shop.name}</h1>
+        </div>
         <h4>{this.state.shop.address}</h4>
         <h4>{this.state.shop.city}</h4>
         <h4>{this.state.shop.state}</h4>
@@ -63,8 +64,5 @@ class ShopShow extends Component {
     )
   }
 }
-
-
-
 
 export default ShopShow
