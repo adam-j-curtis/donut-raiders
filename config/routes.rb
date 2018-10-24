@@ -3,11 +3,13 @@ Rails.application.routes.draw do
   get '/shops', to: 'shops#index'
   get '/shops/:id', to: 'shops#index'
 
+
   devise_for :users
 
   resources :shops, only: [:index]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :donuts, only: [:index]
+
 
   namespace :api do
     namespace :v1 do
@@ -18,6 +20,8 @@ Rails.application.routes.draw do
     end
   end
 end
+
+# get '/api/v1/shops/:id/donuts', to: 'api/v1/donuts#index'
 
 
 end
