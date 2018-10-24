@@ -29,13 +29,9 @@ class ShopIndex extends Component {
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
-
   render() {
-
-
     let mappedShops = this.state.shops.map(shop => {
       return(
-        <div key={shop.id} className='shop-tile'>
         <ShopTile
           key = {shop.id}
           id = {shop.id}
@@ -46,7 +42,7 @@ class ShopIndex extends Component {
           phone = {shop.phone}
           url = {shop.url}
         />
-        </div>
+
       )
     })
     return(
@@ -57,6 +53,5 @@ class ShopIndex extends Component {
     )
   }
 }
-
 
 export default ShopIndex

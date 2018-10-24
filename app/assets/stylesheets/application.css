@@ -47,7 +47,7 @@ body {
   font-weight: 700;
   margin-left: 2%;
   font-size: 10em;
-  font-family: 'Bungee Shade', cursive;
+  font-family: 'Gloria Hallelujah', cursive;
   display: inline;
   border-radius: 40px;
 }
@@ -57,7 +57,7 @@ body {
     font-size: 5em;
     font-weight: 700;
     margin-left: 2%;
-    font-family: 'Bungee Shade', cursive;
+    font-family: 'Gloria Hallelujah', cursive;
     border-radius: 40px;
     display: inline;
     padding: 1px;
@@ -72,7 +72,7 @@ body {
 
 .submit_button_two {
   font-size: 1.5em;
-  font-family: 'Bungee Shade', cursive;
+  font-family: 'Gloria Hallelujah', cursive;
   border-radius: 40px;
   color: #946038;
   margin-left: 2%;
@@ -83,7 +83,7 @@ body {
     font-size: 5em;
     font-weight: 700;
     margin-left: 2%;
-    font-family: 'Bungee Shade', cursive;
+    font-family: 'Gloria Hallelujah', cursive;
     margin-left: 2%;
     border-radius: 40px;
     display: inline;
@@ -95,7 +95,7 @@ body {
   font-size: 5em;
   font-weight: 700;
   margin-left: 2%;
-  font-family: 'Bungee Shade', cursive;
+  font-family: 'Gloria Hallelujah', cursive;
   margin-left: 2%;
   border-radius: 40px;
   display: inline;
@@ -112,7 +112,7 @@ body {
 .check-box {
   padding: 10px;
   color: black;
-  font-family: 'Bungee Shade', cursive;
+  font-family: 'Gloria Hallelujah', cursive;
   border-radius: 40px;
   font-size: 2em;
   font-weight: 800;
@@ -146,7 +146,7 @@ em {
 }
 
 .texts-and-fields {
-  background: rgba(251,233,223,0.7);
+  /* background: rgba(251,233,223,0.7); */
 }
 
 .shop-tile {

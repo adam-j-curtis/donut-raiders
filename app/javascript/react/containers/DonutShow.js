@@ -31,7 +31,6 @@ class DonutShow extends Component {
   }
 
   render(){
-    console.log(this.props)
     let donutdata = this.state
     let reviews = donutdata.reviews.map(review => {
       return(
