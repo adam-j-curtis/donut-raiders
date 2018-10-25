@@ -10,7 +10,6 @@ class ShopIndex extends Component {
   }
 
   componentDidMount(){
-
     fetch(`/api/v1/shops`)
     .then(response => {
       if (response.ok) {
@@ -42,7 +41,6 @@ class ShopIndex extends Component {
           phone = {shop.phone}
           url = {shop.url}
         />
-
       )
     })
     return(

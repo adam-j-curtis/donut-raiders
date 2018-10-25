@@ -8,7 +8,7 @@ RSpec.describe Api::V1::DonutsController, type: :controller do
 
   let!(:seasonal) { Category.create(name:"Seasonal") }
 
-  let!(:double_chocolate) { Donut.create!(name: "Double Chocolate Chunk", shop: honeydew, category: seasonal) }
+  let!(:double_chocolate) { Donut.create!(name: "Double Chocolate Chunk", shop: boston_common_coffee, category: seasonal) }
 
   let!(:jelly) { Donut.create!(name: "Jelly", shop: honeydew, category: seasonal) }
 
@@ -22,31 +22,39 @@ RSpec.describe Api::V1::DonutsController, type: :controller do
   describe "GET#index" do
     it "should return a list of all the donuts that belong to a shop" do
 
-    get "/shops/#{honeydew.id}/donuts"
-    # visit api_v1_shop_donut_path(honeydew.id)
+    get :index, params: {shop_id: honeydew}
 
       returned_json = JSON.parse(response.body)
 
       expect(response.status).to eq 200
       expect(response.content_type). to eq ("application/json")
 
-      expect(returned_json["donuts"].length).to eq 3
-      binding.pry
+      expect(returned_json["donuts"].length).to eq 2
 
-      expect(returned_json["donuts"])
-      # test that two donuts and their attributes appear in the json
+      expect(returned_json["donuts"][0]["reviews"][0]["body"]).to eq "this is very fine."
+      expect(returned_json["donuts"][0]["reviews"][0]["price_range"]).to eq "cheap"
+      expect(returned_json["donuts"][1]["reviews"][0]["body"]).to eq "exquisite donutry."
 
     end
   end
 
-    # show test path
-    # get "/shops/#{honeydew.id}/donuts/#{glazed.id}"
+  describe "GET#show" do
+    it "should return a single donut that belongs to a shop" do
 
+    get :show, params: {shop_id: honeydew, id: jelly}
 
-  # Need a show test here"
-  # - Need to test response status, & type
-  # - test that the shop name is present in the json
-  # - need to test that a specific donuts info appears in the json
-  # - test that the donuts shop appears in the json
-  # - test that the donuts reviews appear in the json
+      returned_json = JSON.parse(response.body)
+
+      expect(response.status).to eq 200
+      expect(response.content_type). to eq ("application/json")
+
+      expect(returned_json.length).to eq 1
+
+      expect(returned_json["donut"]["shop"]["name"]).to eq "Honeydew Donuts"
+
+      expect(returned_json["donut"]["name"]).to eq "Jelly"
+      expect(returned_json["donut"]["category"]["name"]).to eq "Seasonal"
+      expect(returned_json["donut"]["reviews"][0]["body"]).to eq "this is very fine."
+    end
+  end
 end

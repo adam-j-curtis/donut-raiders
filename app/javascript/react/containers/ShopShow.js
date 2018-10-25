@@ -8,13 +8,13 @@ class ShopShow extends Component {
     this.state = {
       donuts: [],
       shop: [],
-      reviews: []
+      reviews: [],
+      img: ["https://www.dunkindonuts.com/content/dam/dd/img/heros-lifestyle/standard/hero-shop-location-640x640.jpg"]
     }
   }
 
   componentDidMount(){
     let shopId = this.props.params.id
-
     fetch(`/api/v1/shops/${shopId}`)
     .then(response => {
       if (response.ok) {
@@ -33,8 +33,7 @@ class ShopShow extends Component {
   }
 
   render(){
-    console.log(this.state.params)
-
+    debugger;
     let donuts = this.state.donuts.map(donut => {
       return(
         <DonutTile
@@ -47,16 +46,19 @@ class ShopShow extends Component {
     })
 
     return (
-      <div>
+      <div className="text-center shop-show">
         <div className="input-form">
-        <h1>Store Name:{this.state.shop.name}</h1>
+          <h1>{this.state.shop.name}</h1>
+          <h4>{this.state.shop.address}</h4>
+          <h4>{this.state.shop.city}</h4>
+          <h4>{this.state.shop.state}</h4>
+          <h4>{this.state.shop.url}</h4>
+          <img src={this.state.img[0]}></img>
+          <hr/>
         </div>
-        <h4>{this.state.shop.address}</h4>
-        <h4>{this.state.shop.city}</h4>
-        <h4>{this.state.shop.state}</h4>
-        <h4>{this.state.shop.url}</h4>
-        <hr/>
-        <h2>Donuts:</h2>
+        <div className="donut-header">
+          <h2>Donuts:</h2>
+        </div>
         <hr/>
         {this.props.children}
         {donuts}
