@@ -77,8 +77,8 @@ class DonutShow extends Component {
 
     return (
       <div>
-        <h1>Donut Name: {donutData.donut.name}</h1>
-        <h1>Purchased At: {donutData.shop.name}</h1>
+        <h1>{donutData.donut.name}</h1>
+        <h1>{donutData.shop.name}</h1>
         <h4>{donutData.shop.address}</h4>
         <h4>{donutData.shop.city}</h4>
         <h4>{donutData.shop.state}</h4>
