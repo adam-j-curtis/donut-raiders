@@ -11,11 +11,12 @@ Rails.application.routes.draw do
   resources :shops, only: [:index]
   resources :donuts, only: [:index]
 
-  namespace :api do
-    namespace :v1 do
-      resources :shops, only: [:index, :show] do
-        resources :donuts, only: [:index, :show] do
-          resources :reviews, only: [:index, :show, :create]
+    namespace :api do
+      namespace :v1 do
+        resources :shops, only: [:index, :show] do
+          resources :donuts, only: [:index, :show] do
+            resources :reviews, only: [:index, :show, :create]
+        end
       end
     end
   end
