@@ -1,6 +1,7 @@
 class Api::V1::DonutsController < ApplicationController
   def index
-    render json: Donut.all, adapter: :json
+    shop = Shop.find(params[:shop_id])
+    render json: shop.donuts, adapter: :json
   end
 
   def show

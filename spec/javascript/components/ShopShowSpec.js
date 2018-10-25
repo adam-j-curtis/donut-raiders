@@ -43,9 +43,15 @@ describe('ShopShow', () => {
             phone: "111-111-1112",
             created_at: "2018-10-23T20:05:14.954Z",
             updated_at: "2018-10-23T20:05:14.954Z"
+          },
+          category: {
+            id: 12,
+            name: "Seasonal",
+            created_at: "2018-10-23T20:05:02.679Z",
+            updated_at: "2018-10-23T20:05:02.679Z"
+            }
           }
-        }
-      ],
+        ],
       reviews: [
         {
           rating: 2,
@@ -68,18 +74,23 @@ describe('ShopShow', () => {
   });
 
   afterEach(fetchMock.restore)
+    it('should render shop show information', (done) => {
+      setTimeout(() => {
+        expect(wrapper.find('h1')).toBePresent()
+        expect(wrapper.find('h1').first().text()).toEqual("Honeydew Donuts");
+        expect(wrapper.find('h4').first().text()).toEqual("1600 Pennsylvia Ave NW");
+        expect(wrapper.find('h4').last().text()).toEqual("www.honeydewrules.org");
+        done()
+      }, 0)
+    })
 
     it('should render a donut tile component', (done) => {
       setTimeout(() => {
           expect(wrapper.find(DonutTile)).toBePresent();
+          expect(wrapper.find('a').text()).toEqual('Jelly Donut')
+          expect(wrapper.find('h1')).toBePresent()
+          expect(wrapper.find('h2').text()).toEqual('Donuts:')
           done()
       }, 0)
     });
-
-    it('should render an h1', (done) => {
-      setTimeout(() => {
-        expect(wrapper.find('h1')).toBePresent()
-        done()
-      }, 0)
-    })
   });

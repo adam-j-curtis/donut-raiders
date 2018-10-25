@@ -18,16 +18,20 @@
 
 
 .top-bar {
-  background-color: #bd895d;
-  padding: 3rem 3rem 3rem 3rem;
+  background-color: rgba(188, 136, 95, 0.9);
+  /* background-color: #bd895d; */
+  padding: 3rem;
+  border: 3rem;
 }
 
 .top-bar li a {
   vertical-align: text-top;
   font-family: 'Roboto', sans-serif;
+  /* font-size: 2rem; */
   color: #BD885F;
   border: 2rem;
-  padding: 0rem 0rem 3rem 0rem;
+  padding: 0rem 0rem 0rem 0rem;
+  line-height: 1.25rem;
 }
 
 .title-area li a {
@@ -108,11 +112,81 @@ body {
   padding: 0.5%;
 }
 
-.input-form {
+/* .input-form {
   padding: 0;
   margin-left: 2%;
   margin-bottom: 20px;
   width: 80%;
+} */
+
+.input-form h1, h4, h2{
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+.input-form h1{
+  display: inline-block;
+  font-size: 4rem;
+  color: white;
+  border: .5rem;
+  padding: 2rem;
+  margin-top: 2rem;
+  border-style: solid;
+  border-color: white;
+  background-color: rgba(110, 114, 119, 0.7);
+}
+
+.input-form h4{
+  font-size: 2rem;
+}
+
+.shop-show h2{
+  font-size: 4rem;
+  display: inline-flex;
+  border: .5rem;
+  padding: 2rem;
+  border-style: solid;
+  border-color: white;
+  background-color: rgba(110, 114, 119, 0.7);
+}
+
+.shop-show a{
+  font-size: 4rem;
+  display: inline-flex;
+  font-family: 'Gloria Hallelujah', cursive;
+  color: black;
+}
+
+.shop-show a:hover {
+    color: rgba(110, 114, 119, 0.7);
+    /* background-color: rgba(110, 114, 119, 0.7); */
+}
+
+.donut-header {
+  display: inline-flex;
+}
+
+.input-form img{
+  margin-top: 1rem;
+  width: 25%;
+  display: inline-flex;
+  border: 1rem;
+  border-style: solid;
+  color: white;
+}
+
+.review-tile {
+  background-color: white;
+  text-align: center;
+  align-items: center;
+}
+
+.review-tile h3{
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+.donut-show h1, h4, h2 {
+  font-family: 'Gloria Hallelujah', cursive;
+  text-align: center;
 }
 
 .check-box {

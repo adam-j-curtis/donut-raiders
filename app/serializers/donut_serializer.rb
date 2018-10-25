@@ -1,5 +1,5 @@
 class DonutSerializer < ActiveModel::Serializer
-  attributes :id, :name, :reviews, :shop
+  attributes :id, :name, :reviews, :shop, :category
 
   private
 
