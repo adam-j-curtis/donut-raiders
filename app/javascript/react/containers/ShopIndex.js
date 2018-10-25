@@ -10,7 +10,6 @@ class ShopIndex extends Component {
   }
 
   componentDidMount(){
-
     fetch(`/api/v1/shops`)
     .then(response => {
       if (response.ok) {
@@ -23,7 +22,6 @@ class ShopIndex extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      console.log(body)
       this.setState({ shops: body.shops})
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -42,7 +40,6 @@ class ShopIndex extends Component {
           phone = {shop.phone}
           url = {shop.url}
         />
-
       )
     })
     return(

@@ -49,18 +49,23 @@ describe('DonutShow', () => {
   });
 
   afterEach(fetchMock.restore)
-
     it('should render a review tile component', (done) => {
       setTimeout(() => {
           expect(wrapper.find(ReviewTile)).toBePresent();
+          expect(wrapper.find('h3').first().text()).toEqual('Rating: 2')
+          expect(wrapper.find('h3').at(1).text()).toEqual('Review: this is a very mediocre and not exciting donut')
+          expect(wrapper.find('h3').last().text()).toEqual('Post Date: 2018-10-23T20:05:56.382Z')
           done()
       }, 0)
     });
 
-    it('should render an h2', (done) => {
+    it('should render donut and shop information', (done) => {
       setTimeout(() => {
         expect(wrapper.find('h2')).toBePresent()
-        expect(wrapper.find('h2').text()).toEqual('Reviews:')
+        expect(wrapper.find('h1').first().text()).toEqual('Jelly Donut')
+        expect(wrapper.find('h1').at(1).text()).toEqual('Honeydew Donuts')
+        expect(wrapper.find('h4').at(0).text()).toEqual('1600 Pennsylvia Ave NW')
+        expect(wrapper.find('h4').last().text()).toEqual('www.honeydewrules.org')
         done()
       }, 0)
     })
