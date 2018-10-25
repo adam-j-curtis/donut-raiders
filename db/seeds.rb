@@ -9,7 +9,7 @@ old_fashioned = Category.create!(name: "Old-Fashioned")
 filled = Category.create!(name: "Filled")
 seasonal = Category.create!(name: "Seasonal")
 
-dunkin = Shop.create!(name: "Dunkin' Donuts", address: "56 Westview Lane", city: "Pittsburgh", state: "PA", url:"www.google.com", phone:"123-456-7890")
+dunkin = Shop.create!(name: "Dunkin' Donuts", address: "56 Westview Lane", city: "Pittsburgh", state: "PA", url: "www.google.com", phone: "123-456-7890")
 boston_cream_dd = Donut.create!(name: "Boston Cream Donut", category: filled, shop: dunkin)
 honey_maple_dd = Donut.create!(name: "Honey Maple Donut", category: old_fashioned, shop: dunkin)
 syrup_glaze_dd = Donut.create!(name: "Syrup Glaze Donut", category: old_fashioned, shop: dunkin)

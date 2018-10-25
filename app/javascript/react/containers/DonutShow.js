@@ -76,7 +76,6 @@ class DonutShow extends Component {
     })
 
     return (
-<<<<<<< HEAD
       <div>
         <h1>Donut Name: {donutData.donut.name}</h1>
         <h1>Purchased At: {donutData.shop.name}</h1>
@@ -89,15 +88,6 @@ class DonutShow extends Component {
         <DonutReviewFormContainer
           addNewDonutReview={handleNewDonutReview}
         />
-=======
-      <div className="donut-show">
-        <h1>{donutdata.donut.name}</h1>
-        <h1>{donutdata.shop.name}</h1>
-        <h4>{donutdata.shop.address}</h4>
-        <h4>{donutdata.shop.city}</h4>
-        <h4>{donutdata.shop.state}</h4>
-        <h4>{donutdata.shop.url}</h4>
->>>>>>> master
         <hr/>
         <h2>Reviews:</h2>
         <hr/>
