@@ -31,7 +31,6 @@ class DonutShow extends Component {
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
-
   addNewDonutReview(formPayload) {
     fetch(`/api/v1/shops/${this.props.params.id[0]}/donuts/${this.props.params.id[1]}/reviews`, {
       method: 'POST',
@@ -61,8 +60,8 @@ class DonutShow extends Component {
 
     let handleNewDonutReview = (formPayload) => this.addNewDonutReview(formPayload)
 
-    let donutdata = this.state
-    let reviews = donutdata.reviews.map(review => {
+    let donutData = this.state
+    let reviews = donutData.reviews.reverse().map(review => {
       return(
         <ReviewTile
           id = {review.id}
@@ -78,12 +77,12 @@ class DonutShow extends Component {
 
     return (
       <div>
-        <h1>Donut Name: {donutdata.donut.name}</h1>
-        <h1>Purchased At: {donutdata.shop.name}</h1>
-        <h4>{donutdata.shop.address}</h4>
-        <h4>{donutdata.shop.city}</h4>
-        <h4>{donutdata.shop.state}</h4>
-        <h4>{donutdata.shop.url}</h4>
+        <h1>Donut Name: {donutData.donut.name}</h1>
+        <h1>Purchased At: {donutData.shop.name}</h1>
+        <h4>{donutData.shop.address}</h4>
+        <h4>{donutData.shop.city}</h4>
+        <h4>{donutData.shop.state}</h4>
+        <h4>{donutData.shop.url}</h4>
         <hr/>
         {this.props.children}
         <DonutReviewFormContainer

@@ -30,10 +30,7 @@ class DonutReviewFormContainer extends Component {
       this.setState({ donutReviewPrice: event.target.value})
     }
 
-
-
   handleSubmit(event) {
-
     event.preventDefault();
     let formPayload = {
       donutReviewTextBody: this.state.donutReviewTextBody,
@@ -42,7 +39,6 @@ class DonutReviewFormContainer extends Component {
     }
     this.props.addNewDonutReview(formPayload)
     this.handleClear(event)
-
   }
 
   handleClear(event) {
@@ -55,8 +51,6 @@ class DonutReviewFormContainer extends Component {
   }
 
   render() {
-    console.log(`consoling log from render`)
-
     return(
       <form onSubmit={this.handleSubmit} >
         <DonutReviewTextBodyField

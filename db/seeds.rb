@@ -14,8 +14,42 @@ dunkin = Shop.create!(name: "Dunkin' Donuts", address: "56 Westview Lane", city:
 honeydew = Shop.create!(name: "Honeydew Donuts", address: "1600 Pennsylvia Ave NW", city: "Washington, DC", state: "DC", url:"www.honeydewrules.org", phone:"111-111-1112")
 
 union_square = Shop.create!(name: "Union Square Donuts", address: "55 Bow Street", city: "Somerville", state: "MA", url:"www.donutsarecool.web", phone:"222-222-2222")
+sugar_raised_us = Donut.create!(name: "Sugar-Raised Donut", category: old_fashioned, shop: union_square)
+maple_bacon_us = Donut.create!(name: "Maple Bacon Donut", category: old_fashioned, shop: union_square)
+vietnamese_us = Donut.create!(name: "Vietnamese Donut", category: old_fashioned, shop: union_square)
+vanilla_bean_us = Donut.create!(name: "Vanilla Bean Donut", category: old_fashioned, shop: union_square)
+honey_glazed_us = Donut.create!(name: "Honey Glaze Donut", category: old_fashioned, shop: union_square)
+cinnamon_sugar_us = Donut.create!(name: "Cinnamon Sugar Donut", category: old_fashioned, shop: union_square)
+pumpkin_spice_us = Donut.create!(name: "Pumpkin Spice Donut", category: seasonal, shop: union_square)
+apple_cide_cake_us = Donut.create!(name: "Apple Cider Cake Donut", category: seasonal, shop: union_square)
 
-sugar_raised = Donut.create!(name: "Sugar-Raised Donut", category: old_fashioned, shop: union_square)
+
+
+
+
+kanes = Shop.create!(name: "Kane's Donuts", address: "90 Oliver St", city: "Boston", state: "MA", url:"www.kanesdonunts.com", phone:"857-317-2654")
+honey_dip_kanes = Donut.create!(name: "Honey Dip Donut", category: old_fashioned, shop: kanes)
+boston_cream_kanes = Donut.create!(name: "Boston Cream Donut", category: filled, shop: kanes)
+chocolate_honey_dip_kanes = Donut.create!(name: "Chocolate Honey Dip Donut", category: old_fashioned, shop: kanes)
+honey_dip_kanes = Donut.create!(name: "Honey Dip Donut", category: old_fashioned, shop: kanes)
+butter_crunch_kanes = Donut.create!(name: "Butter Crunch Donut", category: old_fashioned, shop: kanes)
+creme_brulee_kanes = Donut.create!(name: "Creme Brulee Donut", category: old_fashioned, shop: kanes)
+raspberry_jelly_kanes = Donut.create!(name: "Raspberry Jelly Donut", category: filled, shop: kanes)
+maine_blueberry_kanes = Donut.create!(name: "Maine Blueberry Donut", category: old_fashioned, shop: kanes)
+almond_joy_kanes = Donut.create!(name: "Almond Joy Donut", category: seasonal, shop: kanes)
+dark_cloud_kanes = Donut.create!(name: "Dark Cloud Donut", category: seasonal, shop: kanes)
+blueberry_crumble_kanes = Donut.create!(name: "Blueberry Crumble Donut", category: seasonal, shop: kanes)
+ginger_beer_kanes = Donut.create!(name: "Ginger Beer Donut", category: seasonal, shop: kanes)
+pistachio_kanes = Donut.create!(name: "Pistachio Donut", category: seasonal, shop: kanes)
+
+
+
+
+
+
+
+
+
 
 jelly = Donut.create!(name: "Jelly Donut", category: filled, shop: honeydew)
 

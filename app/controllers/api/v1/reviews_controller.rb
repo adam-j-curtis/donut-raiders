@@ -11,10 +11,7 @@ class Api::V1::ReviewsController < ApplicationController
 
     @shop = Shop.find(params[:shop_id])
     @donut = Donut.find(params[:donut_id])
-#    @review = Review.new(review_params)
 
-
-    #@donut.shop = @shop
     @review = Review.new
     @review.donut = @donut
     @review.shop = @shop
@@ -24,10 +21,9 @@ class Api::V1::ReviewsController < ApplicationController
     @review.price_range = params[:donutReviewPrice]
 
     if @review.save
-      puts "winner"
       render json: Donut.find(params[:donut_id])
     else
-      render json: Donut.find(params[:donut_id])
+      render json: { errors: @review.errors.full_messages }
     end
 
   end

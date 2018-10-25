@@ -13,16 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if(window.railsEnv && window.railsEnv === 'development'){
       try {
         render(<App />, reactElement)
-         //render(<DonutReviewFormContainer />, reactElement)
-
       } catch (e) {
         render(<RedBox error={e} />, reactElement)
       }
     }
     else {
       render(<App />, reactElement)
-       //render(<DonutReviewFormContainer />, reactElement)
-
     }
   }
 })
