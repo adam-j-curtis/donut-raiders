@@ -15,7 +15,7 @@ Rails.application.routes.draw do
       namespace :v1 do
         resources :shops, only: [:index, :show] do
           resources :donuts, only: [:index, :show] do
-            resources :reviews, only: [:index, :show]
+            resources :reviews, only: [:index, :show, :create]
         end
       end
     end

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReviewTile from '../components/ReviewTile'
-
+import DonutReviewFormContainer from './DonutReviewFormContainer'
 
 class DonutShow extends Component {
   constructor(props){
@@ -10,6 +10,7 @@ class DonutShow extends Component {
       shop: [],
       reviews: []
     }
+    this.addNewDonutReview = this.addNewDonutReview.bind(this);
   }
 
   componentDidMount(){
@@ -30,9 +31,37 @@ class DonutShow extends Component {
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
+  addNewDonutReview(formPayload) {
+    fetch(`/api/v1/shops/${this.props.params.id[0]}/donuts/${this.props.params.id[1]}/reviews`, {
+      method: 'POST',
+      body: JSON.stringify(formPayload),
+      headers: {
+        'Accept':  'application/json',
+        'Content-Type': 'application/json'},
+      credentials: 'same-origin'
+    })
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+            error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+          this.setState({ reviews: body.donut.reviews})
+        })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
   render(){
-    let donutdata = this.state
-    let reviews = donutdata.reviews.map(review => {
+
+    let handleNewDonutReview = (formPayload) => this.addNewDonutReview(formPayload)
+
+    let donutData = this.state
+    let reviews = donutData.reviews.reverse().map(review => {
       return(
         <ReviewTile
           id = {review.id}
@@ -47,13 +76,18 @@ class DonutShow extends Component {
     })
 
     return (
-      <div className="donut-show">
-        <h1>{donutdata.donut.name}</h1>
-        <h1>{donutdata.shop.name}</h1>
-        <h4>{donutdata.shop.address}</h4>
-        <h4>{donutdata.shop.city}</h4>
-        <h4>{donutdata.shop.state}</h4>
-        <h4>{donutdata.shop.url}</h4>
+      <div>
+        <h1>{donutData.donut.name}</h1>
+        <h1>{donutData.shop.name}</h1>
+        <h4>{donutData.shop.address}</h4>
+        <h4>{donutData.shop.city}</h4>
+        <h4>{donutData.shop.state}</h4>
+        <h4>{donutData.shop.url}</h4>
+        <hr/>
+        {this.props.children}
+        <DonutReviewFormContainer
+          addNewDonutReview={handleNewDonutReview}
+        />
         <hr/>
         <h2>Reviews:</h2>
         <hr/>
