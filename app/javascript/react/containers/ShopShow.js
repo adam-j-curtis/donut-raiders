@@ -9,7 +9,7 @@ class ShopShow extends Component {
       donuts: [],
       shop: [],
       reviews: [],
-      img: ["https://www.dunkindonuts.com/content/dam/dd/img/heros-lifestyle/standard/hero-shop-location-640x640.jpg"]
+      img: null
     }
   }
 
@@ -52,7 +52,7 @@ class ShopShow extends Component {
           <h4>{this.state.shop.city}</h4>
           <h4>{this.state.shop.state}</h4>
           <h4>{this.state.shop.url}</h4>
-          <img src={this.state.img[0]}></img>
+          <img src={this.state.img}></img>
           <hr/>
         </div>
         <div className="donut-header">
