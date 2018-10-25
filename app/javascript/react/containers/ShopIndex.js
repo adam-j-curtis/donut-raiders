@@ -22,7 +22,6 @@ class ShopIndex extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      console.log(body)
       this.setState({ shops: body.shops})
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));

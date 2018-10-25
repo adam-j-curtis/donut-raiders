@@ -18,16 +18,20 @@
 
 
 .top-bar {
-  background-color: #bd895d;
-  padding: 3rem 3rem 3rem 3rem;
+  background-color: rgba(188, 136, 95, 0.9);
+  /* background-color: #bd895d; */
+  padding: 3rem;
+  border: 3rem;
 }
 
 .top-bar li a {
   vertical-align: text-top;
   font-family: 'Roboto', sans-serif;
+  /* font-size: 2rem; */
   color: #BD885F;
   border: 2rem;
-  padding: 0rem 0rem 3rem 0rem;
+  padding: 0rem 0rem 0rem 0rem;
+  line-height: 1.25rem;
 }
 
 .title-area li a {

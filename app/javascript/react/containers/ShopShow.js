@@ -33,7 +33,6 @@ class ShopShow extends Component {
   }
 
   render(){
-    debugger;
     let donuts = this.state.donuts.map(donut => {
       return(
         <DonutTile
