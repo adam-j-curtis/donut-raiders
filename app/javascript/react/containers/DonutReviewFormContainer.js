@@ -33,9 +33,9 @@ class DonutReviewFormContainer extends Component {
   handleSubmit(event) {
     event.preventDefault();
     let formPayload = {
-      donutReviewTextBody: this.state.donutReviewTextBody,
-      donutReviewRating: this.state.donutReviewRating,
-      donutReviewPrice: this.state.donutReviewPrice,
+      body: this.state.donutReviewTextBody,
+      rating: this.state.donutReviewRating,
+      price_range: this.state.donutReviewPrice
     }
     this.props.addNewDonutReview(formPayload)
     this.handleClear(event)

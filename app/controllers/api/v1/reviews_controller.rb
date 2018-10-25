@@ -12,13 +12,9 @@ class Api::V1::ReviewsController < ApplicationController
     @shop = Shop.find(params[:shop_id])
     @donut = Donut.find(params[:donut_id])
 
-    @review = Review.new
+    @review = Review.new(review_params)
     @review.donut = @donut
     @review.shop = @shop
-
-    @review.rating = params[:donutReviewRating]
-    @review.body = params[:donutReviewTextBody]
-    @review.price_range = params[:donutReviewPrice]
 
     if @review.save
       render json: Donut.find(params[:donut_id])
@@ -28,13 +24,14 @@ class Api::V1::ReviewsController < ApplicationController
 
   end
 
-  # private
-  #   def review_params
-  #     params.require(:review).permit(
-  #       :donutReviewTextBody,
-  #       :donutReviewRating,
-  #       :donutReviewPrice
-  #     )
-  #   end
+  private
+  def review_params
+    params.permit(
+      :body,
+      :rating,
+      :price_range
+    )
+  end
+
 
 end
