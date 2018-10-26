@@ -52,14 +52,19 @@ describe('ShopShow', () => {
             }
           }
         ],
-      reviews: [
-        {
-          rating: 2,
-          body: "this is a very mediocre and not exciting donut",
-          price_range: "2",
-          photo_url: "https://www.theflavorbender.com/wp-content/uploads/2014/09/Simpsons-Doughnuts-4238-Copy-1.jpg"
-        }
-      ]
+        reviews: [
+          {
+            id: 6,
+            rating: 2,
+            body: "this is a very mediocre and not exciting donut",
+            price_range: "2",
+            photo_url: "https://www.theflavorbender.com/wp-content/uploads/2014/09/Simpsons-Doughnuts-4238-Copy-1.jpg",
+            donut_id: 9,
+            created_at: "2018-10-23T20:05:56.382Z",
+            updated_at: "2018-10-23T20:05:56.382Z",
+            shop_id: 12
+          }
+        ]
     }
   }
   fetchMock.get('/api/v1/shops/13', {
@@ -78,8 +83,8 @@ describe('ShopShow', () => {
       setTimeout(() => {
         expect(wrapper.find('h1')).toBePresent()
         expect(wrapper.find('h1').first().text()).toEqual("Honeydew Donuts");
-        expect(wrapper.find('h4').first().text()).toEqual("1600 Pennsylvia Ave NW");
-        expect(wrapper.find('h4').last().text()).toEqual("www.honeydewrules.org");
+        expect(wrapper.find('h3').first().text()).toEqual("1600 Pennsylvia Ave NW");
+        expect(wrapper.find('a').last().text()).toEqual("Jelly Donut");
         done()
       }, 0)
     })
@@ -87,7 +92,6 @@ describe('ShopShow', () => {
     it('should render a donut tile component', (done) => {
       setTimeout(() => {
           expect(wrapper.find(DonutTile)).toBePresent();
-          expect(wrapper.find('a').text()).toEqual('Jelly Donut')
           expect(wrapper.find('h1')).toBePresent()
           expect(wrapper.find('h2').text()).toEqual('Donuts:')
           done()
