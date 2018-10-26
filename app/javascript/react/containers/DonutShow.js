@@ -26,6 +26,7 @@ class DonutShow extends Component {
     })
     .then(response => response.json())
     .then(body => {
+      debugger;
       this.setState({ donut: body.donut, shop: body.donut.shop, reviews: body.donut.reviews})
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));

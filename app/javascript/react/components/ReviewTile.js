@@ -3,8 +3,8 @@ import React from 'react'
 const ReviewTile = (props) => {
 
   return(
-    <div key={props.id} className="text-center review-tile">
-      <div className="">
+    <div className="text-center review-tile">
+      <div key={props.id}>
         <i className="far fa-sticky-note fa-4x"></i>
         <h2>{props.body}</h2>
         <h3>Rating: {props.rating}</h3>

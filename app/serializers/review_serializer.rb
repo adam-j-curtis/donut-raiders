@@ -1,5 +1,5 @@
 class ReviewSerializer < ActiveModel::Serializer
-  attributes :rating, :body, :price_range, :photo_url, :date
+  attributes :rating, :body, :price_range, :photo_url, :date, :id
 
   belongs_to :donut
   belongs_to :shop
