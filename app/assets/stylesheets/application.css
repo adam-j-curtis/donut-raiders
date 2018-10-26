@@ -176,9 +176,12 @@ body {
   margin: 0rem 20rem;
   width: 40%;
   display: inline-flex;
-  border: 1rem;
-  border-style: solid;
-  color: white;
+
+  background: linear-gradient(white,white), repeating-linear-gradient(60deg, #f6b44c, #fbe9df, #f5bfda, #ef787e, #dab88a, #946038, #a4d7d2);
+  padding: 10px 20px;
+  border-radius: 20px;
+
+  background-clip: content-box, padding-box;
 }
 
 .review-tile {
@@ -357,11 +360,11 @@ form {
 }
 
 #donut-pic{
-    transform: rotate(90deg);
-    border-radius: 2rem;
-    border: 1rem;
-    border-style: solid;
-    border-color: white;
+  transform: rotate(90deg);
+  border-radius: 2rem;
+  background: linear-gradient(white,white), repeating-linear-gradient(60deg, #f6b44c, #fbe9df, #f5bfda, #ef787e, #dab88a, #946038, #a4d7d2);
+  padding: 10px 20px;
+  background-clip: content-box, padding-box;
 }
 
 .all-shops{

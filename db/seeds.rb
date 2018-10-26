@@ -85,3 +85,4 @@ fav_donuts_13 = Photo.create!(dropbox_link: "https://www.dropbox.com/s/wcmwskzzq
 fav_donuts_14 = Photo.create!(dropbox_link: "https://www.dropbox.com/s/wjb56plu0cwdmie/Image%20from%20iOS.jpg?raw=1")
 fav_donuts_15 = Photo.create!(dropbox_link: "https://www.dropbox.com/s/vwmmp7r1j12w45w/Image%20from%20iOS%20%284%29.jpg?raw=1")
 fav_donuts_16 = Photo.create!(dropbox_link: "https://www.dropbox.com/s/7tj13ln4eunpat2/Image%20from%20iOS%20%283%29.jpg?raw=1")
+# fav_donuts_16 = Photo.create!(dropbox_link: "https://www.dropbox.com/s/7tj13ln4eunpat2/Image%20from%20iOS%20%283%29.jpg?raw=1")
