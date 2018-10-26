@@ -26,6 +26,7 @@ class DonutShow extends Component {
     })
     .then(response => response.json())
     .then(body => {
+      debugger;
       this.setState({ donut: body.donut, shop: body.donut.shop, reviews: body.donut.reviews})
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -51,13 +52,13 @@ class DonutShow extends Component {
     })
     .then(response => response.json())
     .then(body => {
-          this.setState({ reviews: body.donut.reviews})
-        })
+      let newReviews = this.state.reviews.concat(body.review)
+      this.setState({ reviews: newReviews})
+    })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
-
     let handleNewDonutReview = (formPayload) => this.addNewDonutReview(formPayload)
 
     let donutData = this.state
@@ -70,19 +71,15 @@ class DonutShow extends Component {
           photo_url = {review.photo_url}
           price_range = {review.price_range}
           rating = {review.rating}
-          date = {review.created_at}
+          date = {review.date}
           />
       )
     })
 
     return (
-      <div>
+      <div className="donut-show">
         <h1>{donutData.donut.name}</h1>
-        <h1>{donutData.shop.name}</h1>
-        <h4>{donutData.shop.address}</h4>
-        <h4>{donutData.shop.city}</h4>
-        <h4>{donutData.shop.state}</h4>
-        <h4>{donutData.shop.url}</h4>
+        <h2>{donutData.shop.name}</h2>
         <hr/>
         {this.props.children}
         <DonutReviewFormContainer

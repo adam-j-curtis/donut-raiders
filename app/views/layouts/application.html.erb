@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>DonutRaiders</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Roboto:500" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -14,8 +15,8 @@
 
   <nav class="top-bar">
     <ul class="title-area">
-      <li class="name">
-        <h1><a href="/shops">DonutRaiders</a></h1>
+      <li id="main-title" class="name">
+        <h1><a href="/">DonutRaiders</a></h1>
       </li>
     </ul>
 
@@ -49,6 +50,6 @@
   <%= javascript_pack_tag 'application' %>
 
   <%= yield :extra_footer %>
-  <%= render "layouts/footer" %>
 </body>
+<%= render "layouts/footer" %>
 </html>

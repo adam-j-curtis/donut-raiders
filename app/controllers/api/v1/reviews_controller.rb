@@ -17,11 +17,10 @@ class Api::V1::ReviewsController < ApplicationController
     @review.shop = @shop
 
     if @review.save
-      render json: Donut.find(params[:donut_id])
+      render json: @review
     else
       render json: { errors: @review.errors.full_messages }
     end
-
   end
 
   private
@@ -32,6 +31,4 @@ class Api::V1::ReviewsController < ApplicationController
       :price_range
     )
   end
-
-
 end

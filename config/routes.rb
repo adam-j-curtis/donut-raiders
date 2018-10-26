@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'shops#index'
   get '/shops', to: 'shops#index'
+  root 'shops#index'
   get '/shops/:id', to: 'shops#index'
   get '/shops/:id/donuts/:id', to: 'shops#index'
   get '/api/v1/shops/:shop_id/donuts', to: 'api/v1/donuts#index'
@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :shops, only: [:index]
   resources :donuts, only: [:index]
+  resources :photos, only: [:index]
 
     namespace :api do
       namespace :v1 do
