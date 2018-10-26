@@ -16,18 +16,21 @@
 
  */
 
-
 .top-bar {
-  background-color: #bd895d;
-  padding: 3rem 3rem 3rem 3rem;
+  background-color: rgba(188, 136, 95, 0.9);
+  /* background-color: #bd895d; */
+  padding: 3rem;
+  border: 3rem;
 }
 
 .top-bar li a {
   vertical-align: text-top;
   font-family: 'Roboto', sans-serif;
+  /* font-size: 2rem; */
   color: #BD885F;
   border: 2rem;
-  padding: 0rem 0rem 3rem 0rem;
+  padding: 0rem 0rem 0rem 0rem;
+  line-height: 1.25rem;
 }
 
 .title-area li a {
@@ -36,10 +39,16 @@
 }
 
 body {
-  background: url(http://makeandtell.com/wp-content/uploads/2016/06/deckyourdesktop_june2016_widescreen.jpg) no-repeat center center fixed, rgba(251,233,223,0.7);
+  background: url(https://www.dropbox.com/s/j3du2hevukopl2w/deckyourdesktop_june2016_widescreen.jpg?raw=1) no-repeat center center fixed, rgba(251,233,223,0.7);
   background-position: center;
   background-size: cover;
   background-blend-mode: lighten;
+}
+
+.donut-tile {
+  margin-right: 0;
+  padding: 0;
+  width: 20%;
 }
 
 .log-in {
@@ -102,11 +111,113 @@ body {
   padding: 0.5%;
 }
 
-.input-form {
+/* .input-form {
   padding: 0;
   margin-left: 2%;
   margin-bottom: 20px;
   width: 80%;
+} */
+
+.input-form h1, h3, h2, a{
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+.input-form h1{
+  display: inline-block;
+  font-size: 4rem;
+  color: white;
+  border: .5rem;
+  padding: 2rem;
+  margin-top: 2rem;
+  border-style: solid;
+  border-color: white;
+  background-color: rgba(110, 114, 119, 0.7);
+}
+
+.input-form h2{
+  font-size: 2rem;
+  color: white;
+}
+#small-link {
+  font-size: 3rem;
+  margin: 2rem 8rem;
+  /* display: inline-block; */
+}
+
+.shop-show h2{
+  color: white;
+  font-size: 4rem;
+  display: inline-flex;
+  border: .5rem;
+  padding: 2rem;
+  border-style: solid;
+  border-color: white;
+  background-color: rgba(110, 114, 119, 0.7);
+}
+
+.shop-show a{
+  font-size: 4rem;
+  display: inline-flex;
+  font-family: 'Gloria Hallelujah', cursive;
+  color: black;
+
+}
+
+.shop-show a:hover {
+    color: rgba(110, 114, 119, 0.7);
+    /* background-color: rgba(110, 114, 119, 0.7); */
+}
+
+.donut-header {
+  display: inline-flex;
+}
+
+.input-form img{
+  margin: 0rem 20rem;
+  width: 40%;
+  display: inline-flex;
+  border: 1rem;
+  border-style: solid;
+  color: white;
+}
+
+.review-tile {
+  margin: 0rem 15rem 4rem 15rem;
+  border: .5rem;
+  border-radius: 2rem;
+  border-style: solid;
+  border-color: black;
+  padding-top: 0px;
+  padding-bottom: 10rem;
+  background-color: white;
+  text-align: center;
+  align-items: center;
+}
+
+.review-tile h3{
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+.donut-show {
+  margin: 3rem 5rem 5rem 5rem;
+  border: .25rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-style: solid;
+  border-color: black;
+  border-radius: 1rem;
+}
+.donut-show h1, h4{
+  font-family: 'Gloria Hallelujah', cursive;
+  text-align: center;
+}
+.donut-show h2 {
+  font-family: 'Gloria Hallelujah', cursive;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.form-alignment{
+  display: inline-flex;
 }
 
 .check-box {
@@ -145,9 +256,6 @@ em {
   margin-left: 2%;
 }
 
-.texts-and-fields {
-  /* background: rgba(251,233,223,0.7); */
-}
 
 .shop-tile {
   border: .5rem;
@@ -168,21 +276,114 @@ em {
   font-style: oblique;
 }
 
-.footer{
-  vertical-align: bottom;
-  background-color: #bd895d;
-  position: sticky;
-  margin: 80rem 0rem 0rem 0rem;
-  padding: 0rem 0rem 0rem 0rem;
-  border: 0rem 0rem 0rem 0rem;
-  color: white;
-  font-family: 'Roboto', sans-serif;
+
+.footer {
+    margin-top: 10rem;
+    margin-bottom: 0rem;
+    margin-left: 0rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(188, 136, 95, 0.9);
+    color: white;
+    text-align: center;
 }
 
-.footer li {
+.footer a {
+  margin-left: 0rem;
   text-align: center;
-  padding: 1rem 2rem 2rem 2rem;
+  padding: 0rem 5rem 2rem 2rem;
   vertical-align: bottom;
   display: inline-block;
   text-align: center;
+  font-size: 1rem;
+  color: white;
+}
+
+.footer a:hover {
+    color: rgba(110, 114, 119, 0.7);
+}
+
+.form-button {
+  padding: 1.5rem 3rem;
+  margin: 1rem;
+}
+
+form {
+  font-family: 'Roboto', sans-serif;
+  font-style: oblique;
+  font-weight: bold;
+  /* display: float; */
+  /* text-align: center; */
+  /* margin-left: 30rem; */
+  /* margin: 0rem 40rem; */
+}
+
+.fa-sticky-note{
+  visibility: visible;
+  /* width: 20rem; */
+  display: inline-block;
+  position: relative;
+  /* align-content: flex-end; */
+  margin: 2rem 40rem 10rem 0rem;
+  color: #BAD7CD;
+}
+
+/* i {
+  width: 20rem;
+} */
+
+#main-title {
+  font-size: 5rem;
+}
+
+.donut-list{
+  background-color: white;
+  border: 1rem;
+  border-radius: 2rem;
+  border-style: solid;
+  margin: 0rem 5rem 10rem 5rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.our-donuts{
+  width: 50%;
+  /* margin: 10rem 0rem 4rem 0rem; */
+  /* margin: 2rem 0rem; */
+  margin-top: 8rem;
+  margin-left: 10rem;
+}
+
+#donut-pic{
+    transform: rotate(90deg);
+    border-radius: 2rem;
+    border: 1rem;
+    border-style: solid;
+    border-color: white;
+}
+
+.all-shops{
+  margin-bottom: 6rem;
+}
+
+.photo-gallery-headline, h1 {
+  font-family: 'Gloria Hallelujah', cursive;
+  text-align: center;
+  margin: 2rem 4rem;
+}
+
+.photo-gallery-headline {
+  border-color: black;
+  border-style: solid;
+  border-radius: 2rem;
+  background-color:  rgba(255, 255, 255, 0.7);
+}
+
+#photo-border{
+  margin-top: 2rem;
+  border: .25rem;
+  border-style: solid;
+  border-color: black;
 }

@@ -3,12 +3,14 @@ import React from 'react'
 const ReviewTile = (props) => {
 
   return(
-    <div>
-      <h3>Review Number: {props.id}</h3>
-      <h3>Rating: {props.rating}</h3>
-      <h3>Review: {props.body}</h3>
-      <h3>Price Range: {props.price_range}</h3>
-      <h3>Post Date: {props.date}</h3>
+    <div className="text-center review-tile">
+      <div key={props.id}>
+        <i className="far fa-sticky-note fa-4x"></i>
+        <h2>{props.body}</h2>
+        <h3>Rating: {props.rating}</h3>
+        <h3>Price Range: {props.price_range}</h3>
+        <h3>Post Date: {props.date}</h3>
+      </div>
       <hr/>
     </div>
   )

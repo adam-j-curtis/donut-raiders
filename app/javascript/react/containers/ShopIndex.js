@@ -10,7 +10,6 @@ class ShopIndex extends Component {
   }
 
   componentDidMount(){
-
     fetch(`/api/v1/shops`)
     .then(response => {
       if (response.ok) {
@@ -23,7 +22,6 @@ class ShopIndex extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      console.log(body)
       this.setState({ shops: body.shops})
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -41,12 +39,12 @@ class ShopIndex extends Component {
           state = {shop.state}
           phone = {shop.phone}
           url = {shop.url}
+          photo_url = {shop.photo_url}
         />
-
       )
     })
     return(
-      <div className="text-center medium-12 columns">
+      <div className="text-center all-shops medium-12 columns">
         {mappedShops}
         {this.props.children}
       </div>

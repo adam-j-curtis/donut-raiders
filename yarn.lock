@@ -7533,6 +7533,11 @@ react-dom@~15.4.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
+react-moment@^0.8.2:
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/react-moment/-/react-moment-0.8.2.tgz#9361a38668b7864dc170a0d69ee3d0da3cc4b2c3"
+  integrity sha512-7EfyalAhGMMSUFHvPoic4lWCtXxNc3Zn0JNTvDLmVUl+P37PgyRRwOQx9UVSQ6gWryIoqdEbS1KfK3zd7CGK9Q==
+
 react-router@~3.2.0:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/react-router/-/react-router-3.2.1.tgz#b9a3279962bdfbe684c8bd0482b81ef288f0f244"

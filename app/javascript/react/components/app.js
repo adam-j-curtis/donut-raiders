@@ -7,8 +7,8 @@ import DonutShow from '../containers/DonutShow'
 
 export const App = (props) => {
   return(
-    <Router history={browserHistory}>
-      <Route path='/shops' component={ShopIndex}/>
+    <Router onUpdate={() => window.scrollTo(0, 0)} history={browserHistory}>
+      <Route path='/' component={ShopIndex}/>
       <Route path='/shops/:id' component={ShopShow}/>
       <Route path='/shops/:id/donuts/:id' component={DonutShow}/>
     </Router>

@@ -1,0 +1,13 @@
+<div class="photo-gallery-headline">
+  <h1>Donuts that we have enjoyed</h1>
+  <hr id="photo-border">
+</div>
+<% @photos.each do |photo|%>
+<div class="rows medium-6 large-6 columns">
+  <div class="our-donuts">
+    <a href="<%=photo.dropbox_link%>">
+      <img id="donut-pic" src="<%=photo.dropbox_link%>" />
+    </a>
+  </div>
+</div>
+<% end %>

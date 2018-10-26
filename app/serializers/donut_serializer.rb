@@ -1,14 +1,11 @@
 class DonutSerializer < ActiveModel::Serializer
-  attributes :id, :name, :reviews, :shop
+  attributes :id, :name, :reviews, :shop, :category
 
   private
 
-  def reviews
-    ReviewSerializer.new(object.review).attributes
-  end
+  has_many :reviews
 
   def shop
     ShopSerializer.new(object.shop).attributes
   end
-
 end

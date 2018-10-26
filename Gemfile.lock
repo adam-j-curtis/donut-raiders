@@ -84,6 +84,10 @@ GEM
     factory_bot (4.11.1)
       activesupport (>= 3.0.0)
     ffi (1.9.25)
+    fie (0.3.4)
+      rails (~> 5.2, >= 5.2.0)
+      railties (~> 5.2, >= 5.2.0)
+      redis (~> 4.0, >= 4.0.1)
     foundation-rails (5.5.3.2)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
@@ -164,6 +168,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    redis (4.0.2)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -237,6 +242,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_bot
+  fie (~> 0.3.3)
   foundation-rails (~> 5.0)
   jbuilder (~> 2.5)
   jquery-rails
