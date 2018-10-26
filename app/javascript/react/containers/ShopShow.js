@@ -8,8 +8,7 @@ class ShopShow extends Component {
     this.state = {
       donuts: [],
       shop: [],
-      reviews: [],
-      img: null
+      reviews: []
     }
   }
 
@@ -48,11 +47,11 @@ class ShopShow extends Component {
       <div className="text-center shop-show">
         <div className="input-form">
           <h1>{this.state.shop.name}</h1>
-          <h4>{this.state.shop.address}</h4>
-          <h4>{this.state.shop.city}</h4>
-          <h4>{this.state.shop.state}</h4>
-          <h4>{this.state.shop.url}</h4>
-          <img src={this.state.img}></img>
+          <h3>{this.state.shop.address}</h3>
+          <h3>{this.state.shop.city}</h3>
+          <h3>{this.state.shop.state}</h3>
+          <a id="small-link" href='http://${this.state.shop.url}'>{this.state.shop.url}</a>
+          <img src={this.state.shop.photo_url}></img>
           <hr/>
         </div>
         <div className="donut-header">
@@ -60,7 +59,9 @@ class ShopShow extends Component {
         </div>
         <hr/>
         {this.props.children}
-        {donuts}
+        <div className="donut-list">
+          {donuts}
+        </div>
       </div>
     )
   }

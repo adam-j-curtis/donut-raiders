@@ -52,30 +52,32 @@ class DonutReviewFormContainer extends Component {
 
   render() {
     return(
-      <form onSubmit={this.handleSubmit} >
-        <DonutReviewTextBodyField
-          content={this.state.donutReviewTextBody}
-          label="Donut Review Text Body"
-          name="donut-review-text-body"
-          handleNewDonutReviewTextBodyField={this.handleNewDonutReviewTextBodyField}
-        />
-        <DonutReviewRatingField
-          content={this.state.donutReviewRating}
-          label="Donut Review Rating"
-          name="donut-review-rating"
-          handleNewDonutReviewRatingField={this.handleNewDonutReviewRatingField}
-        />
-        <DonutReviewPriceField
-          content={this.state.donutReviewPrice}
-          label="Donut Review Price"
-          name="donut-review-price"
-          handleNewDonutReviewPriceField={this.handleNewDonutReviewPriceField}
-        />
-        <div className="button-group">
-          <button className="button" onClick={this.handleClear} >Clear</button>
-          <input className="button" type="submit" value="Submit" />
-        </div>
-      </form>
+      <div className="">
+        <form className="text-center small-12 columns" onSubmit={this.handleSubmit} >
+          <DonutReviewTextBodyField
+            content={this.state.donutReviewTextBody}
+            label="Donut Review Text Body"
+            name="donut-review-text-body"
+            handleNewDonutReviewTextBodyField={this.handleNewDonutReviewTextBodyField}
+          />
+          <DonutReviewRatingField
+            content={this.state.donutReviewRating}
+            label="Donut Review Rating"
+            name="donut-review-rating"
+            handleNewDonutReviewRatingField={this.handleNewDonutReviewRatingField}
+          />
+          <DonutReviewPriceField
+            content={this.state.donutReviewPrice}
+            label="Donut Review Price"
+            name="donut-review-price"
+            handleNewDonutReviewPriceField={this.handleNewDonutReviewPriceField}
+          />
+        <div>
+            <button className="secondary button form-button" onClick={this.handleClear} >Clear</button>
+            <input className="secondary button form-button" type="submit" value="Submit" />
+          </div>
+        </form>
+    </div>
     )
   }
 }

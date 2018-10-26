@@ -4,4 +4,9 @@ class Review < ApplicationRecord
 
   belongs_to :donut
   belongs_to :shop
+
+
+  # def self.convert_date
+  #   object.created_at = object.created_at.strftime("%d %b %y")
+  # end
 end

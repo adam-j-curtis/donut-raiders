@@ -3,7 +3,9 @@ import React from 'react';
 const DonutReviewTextBodyField = (props) => {
   return(
     <label className="form-label" >{props.label}
-      <input
+      <textarea
+        rows="5"
+        cols="5"
         name={props.name}
         type='text'
         value={props.content}

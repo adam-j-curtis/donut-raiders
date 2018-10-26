@@ -3,12 +3,9 @@ class DonutSerializer < ActiveModel::Serializer
 
   private
 
-  def reviews
-    ReviewSerializer.new(object.review).attributes
-  end
+  has_many :reviews
 
   def shop
     ShopSerializer.new(object.shop).attributes
   end
-
 end

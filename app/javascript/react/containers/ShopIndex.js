@@ -39,11 +39,12 @@ class ShopIndex extends Component {
           state = {shop.state}
           phone = {shop.phone}
           url = {shop.url}
+          photo_url = {shop.photo_url}
         />
       )
     })
     return(
-      <div className="text-center medium-12 columns">
+      <div className="text-center all-shops medium-12 columns">
         {mappedShops}
         {this.props.children}
       </div>
