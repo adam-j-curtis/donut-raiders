@@ -69,7 +69,7 @@ cider_donut_rf = Donut.create!(name: "Cider Donut", category: seasonal, shop: ra
 review1 = Review.create!(rating: 4, body: "this is the best donut i have ever tasted in my 7 years on this earth", price_range: "1", photo_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Glazed-Donut.jpg/1200px-Glazed-Donut.jpg", donut: sugar_raised_us, shop: union_square )
 review2 = Review.create!(rating: 2, body: "this is a very mediocre and not exciting donut", price_range: "2", photo_url: "https://www.theflavorbender.com/wp-content/uploads/2014/09/Simpsons-Doughnuts-4238-Copy-1.jpg", donut: jelly_hd, shop: honeydew)
 
-fav_donuts_1 = Photo.create!("https://www.dropbox.com/s/5k9y1ifcahjbpu6/IMG_0066.JPG?raw=1")
+fav_donuts_1 = Photo.create!(dropbox_link: "https://www.dropbox.com/s/5k9y1ifcahjbpu6/IMG_0066.JPG?raw=1")
 fav_donuts_2 = Photo.create!(dropbox_link: "https://www.dropbox.com/s/r4zcj1cp623wtbx/IMG_0067.JPG?raw=1")
 fav_donuts_3 = Photo.create!(dropbox_link: "https://www.dropbox.com/s/o7cgf3yx21y20b1/IMG_0068.JPG?raw=1")
 fav_donuts_4 = Photo.create!(dropbox_link: "https://www.dropbox.com/s/b6m0sy2q738ocib/IMG_0069.JPG?raw=1")
